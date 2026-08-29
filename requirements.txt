@@ -1,0 +1,21 @@
+# Dependencias del notebook TP_NLP_ZAHIR_JACOB.ipynb (probado en Google Colab, 2026).
+# Recuperación y almacenamiento
+chromadb
+sentence-transformers
+txtai
+grafitodb[viz]
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+# Modelos de lenguaje
+torch
+transformers
+accelerate
+# Datos y evaluación
+pandas
+openpyxl
+scikit-learn
+matplotlib
+# Descarga del dataset (opcional; los datos ya están en data/)
+gdown
