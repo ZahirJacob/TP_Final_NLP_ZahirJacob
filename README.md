@@ -31,7 +31,14 @@ La consulta del usuario atraviesa las siguientes etapas:
 
 ## Resultados
 
-Los clasificadores de intención se evalúan sobre un conjunto sintético de 90 consultas (27 reservadas para prueba), que incluye un subconjunto de consultas más exigentes: lenguaje informal, errores de tipeo, ausencia de signos de pregunta y vocabulario que mezcla distintas fuentes. Las métricas y la comparación entre el enfoque supervisado y el LLM con *few-shot prompting* se detallan en el *notebook*. Cabe señalar que el conjunto sigue siendo reducido, por lo que los resultados deben interpretarse como una validación funcional y no como una medida de generalización.
+Los clasificadores de intención se evalúan sobre un conjunto sintético de 90 consultas (27 reservadas para prueba), que incluye un subconjunto de consultas más exigentes: lenguaje informal, errores de tipeo, ausencia de signos de pregunta y vocabulario que mezcla distintas fuentes.
+
+| Clasificador | Exactitud | F1 macro |
+|---|---|---|
+| TF-IDF + regresión logística | 0,85 | 0,85 |
+| LLM local con *few-shot prompting* | 0,96 | 0,96 |
+
+Los errores del modelo supervisado se concentran en consultas ambiguas que combinan vocabulario de dos fuentes; el LLM las resuelve mejor, por lo que es el clasificador adoptado en el *pipeline* principal. Cabe señalar que el conjunto sigue siendo reducido, por lo que los resultados deben interpretarse como una validación funcional y no como una medida de generalización.
 
 Las respuestas generadas se apoyan exclusivamente en el contexto recuperado e incorporan opiniones mixtas de los usuarios cuando corresponde, sin introducir información externa.
 
